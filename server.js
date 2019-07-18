@@ -34,8 +34,7 @@ const corsOptions = {
 }
 
 app.use(morgan('combined'));
-//app.use(cors(corsOptions))
-app.use(cors())
+app.use(cors(corsOptions))
 app.use(bodyParser.json());
 
 app.get('/', (req, res)=> { res.send("ITS WORKING") })
