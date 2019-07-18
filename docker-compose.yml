@@ -1,0 +1,36 @@
+version: '3.6'
+
+services:
+
+  # Backend API
+  mastermind-api:
+    container_name: backend
+    build: ./
+    command: npm start
+    working_dir: /usr/src/mastermind-api
+    env_file: .env
+    links:
+      - postgres
+      - redis
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/usr/src/mastermind-api
+
+  # Postgres
+  postgres:
+    environment:
+      POSTGRES_USER: sally
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: mastermind-docker
+      POSTGRES_HOST: postgres
+    build: ./postgres
+    ports:
+      - "5432:5432"
+
+  # Redis
+  redis:
+    container_name: redis
+    image: redis
+    ports:
+      - "6379:6379"
