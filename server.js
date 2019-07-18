@@ -17,12 +17,12 @@ const auth = require('./controllers/authorization');
 //Database Setup
 const db = knex({
   client: 'pg',
-  connection: process.env.POSTGRES_URI
+  connection: process.env.DATABASE_URL
 });
 
 const app = express();
 
-const whitelist = [process.env.FRONTEND_URI]
+const whitelist = [process.env.FRONTEND_URL]
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
