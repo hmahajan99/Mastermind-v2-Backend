@@ -19,7 +19,7 @@ For the previous version of this app, Mastermind 1.0 see https://github.com/hmah
 
 To run this project :
 1. Clone this repo
-2. Change you directory : `cd Mastermind2-backend`
+2. Change your directory : `cd Mastermind2-backend`
 3. Set up environment variables by declaring them in a .env file in the root directory. 
 4. If the docker container is unable to recognize node modules run `npm install`
 5. Run `docker-compose up --build`
