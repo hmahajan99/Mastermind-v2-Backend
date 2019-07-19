@@ -13,7 +13,7 @@ For the previous version of this app, Mastermind 1.0 see https://github.com/hmah
 <li><b>Frontend: </b>Built using React</li>
 <li><b>Server: </b>Built using Express framework</li>
 <li><b>Database: </b>PostgreSQL, for storing user data</li>
-<li><b>Session Management: </b>Using Redis and JSON Web Tokens</li>
+<li><b>User Authentication and Session Management: </b>Using Redis and JSON Web Tokens</li>
 <li><b>Docker: </b>Used during development to run containers for postgres,redis and the server</li>
 </ul>
 
