@@ -34,11 +34,12 @@ const corsOptions = {
 }
 
 app.use(morgan('combined'));
-app.use(cors(corsOptions))
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 app.get('/', (req, res)=> { res.send("ITS WORKING") })
 app.post('/signin', signin.signinAuthentication(db, bcrypt))
+app.get('/leaderboard', (req, res) => { leaderboard.getLeaderboard(req, res, db)})
 app.post('/register', (req, res) => { register.handleRegister(req, res, db, bcrypt)})
 app.post('/signout', auth.requireAuth, (req, res) => { signout.handleSignOut(req, res)})
 app.get('/profile/:id', auth.requireAuth, (req, res) => { profile.handleProfileGet(req, res, db)})
@@ -47,7 +48,6 @@ app.put('/account', auth.requireAuth, (req, res) => { account.handlePasswordChan
 app.delete('/account', auth.requireAuth, (req, res) => { account.deleteAccount(req, res, db)})
 app.put('/image', auth.requireAuth, (req, res) => { image.handleImage(req, res, db)})
 app.post('/imageurl', auth.requireAuth, (req, res) => { image.handleApiCall(req, res)})
-app.get('/leaderboard', auth.requireAuth, (req, res) => { leaderboard.getLeaderboard(req, res, db)})
 
 app.listen(process.env.PORT || 3000, ()=> {
   console.log(`app is running on port ${process.env.PORT || 3000}`);

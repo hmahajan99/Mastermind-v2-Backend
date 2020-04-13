@@ -1,5 +1,13 @@
 const Clarifai = require('clarifai');
 
+const actionToModelMap = {
+  'detectFaces': Clarifai.FACE_DETECT_MODEL,
+  'generalConcepts': Clarifai.GENERAL_MODEL,
+  'getDemographics': Clarifai.DEMOGRAPHICS_MODEL,
+  'getApparels': Clarifai.APPAREL_MODEL,
+  'recognizeFood': Clarifai.FOOD_MODEL,
+  'recognizeCelebrity': Clarifai.CELEBRITY_MODEL
+}
 
 const app = new Clarifai.App({
  apiKey: process.env.CLARIFAI_API_KEY
@@ -7,7 +15,7 @@ const app = new Clarifai.App({
 
 const handleApiCall = (req, res) => {
   app.models
-    .predict(Clarifai.FACE_DETECT_MODEL, req.body.input)
+    .predict(actionToModelMap[req.body.action], req.body.imageurl)
     .then(data => {
       res.json(data);
     })
