@@ -1,6 +1,8 @@
 # Mastermind v2 (Backend)
 
-> This is a web application which uses machine learning to provide various analytics on images with provisions for registering, signing in, viewing the leaderboard and editing profiles. You can detect faces, get demographics, recognize celebrities, concepts, food and apparels in your images. 
+> This is a web application which uses machine learning to provide various analytics on images with provisions for registering, signing in, viewing the leaderboard and editing profiles. 
+
+> You can detect faces, get demographics, recognize celebrities, concepts, food and apparels in your images. 
 
 > This repository hosts the code for the backend. Code for the React application can be found at https://github.com/hmahajan99/Mastermind-v2-Frontend
 
