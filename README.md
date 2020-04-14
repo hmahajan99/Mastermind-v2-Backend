@@ -1,15 +1,24 @@
-# Mastermind 2.0 (Backend)
+# Mastermind v2 (Backend)
 
-> This is a web application which uses machine learning to detect faces in your images with provisions for registering, signing in, viewing the leaderboard and editing profiles.
+> This is a web application which uses machine learning to provide various analytics on images with provisions for registering, signing in, viewing the leaderboard and editing profiles. You can detect faces, get demographics, recognize celebrities, concepts, food and apparels in your images. 
 
-> This repository hosts the code for the backend. Code for the React application can be found at https://github.com/hmahajan99/Mastermind2-frontend.
+> This repository hosts the code for the backend. Code for the React application can be found at https://github.com/hmahajan99/Mastermind-v2-Frontend
 For the previous version of this app, Mastermind 1.0 see https://github.com/hmahajan99/Mastermind.
 
 > Deployed at https://mastermind2.herokuapp.com/
 
 ## This project consists of :
 <ul>
-<li><b>Face Detection: </b>Using Clarifai API</li>
+<li><b>Image Analyzer: </b>Using Clarifai API
+  <ul>
+    <li>Face Detection</li>
+    <li>Demographics</li>
+    <li>Recognize celebrities</li>
+    <li>Recognize geeneral concepts</li>
+    <li>Recognize food</li>
+    <li>Recognize apparel</li>
+  </ul>
+</li>
 <li><b>Frontend: </b>Built using React</li>
 <li><b>Server: </b>Built using Express framework</li>
 <li><b>Database: </b>PostgreSQL, for storing user data</li>
@@ -25,10 +34,13 @@ To run this project :
 5. Run `docker-compose up --build`
 
 #### Face Detection :
-![](screenshots/FaceDetection.JPG)
-
-#### User Profile :
-![](screenshots/Profile.JPG)
+![](screenshots/3-FaceDetection.png)
 
 #### Leaderboard :
-![](screenshots/Leaderboard.JPG)
+![](screenshots/Leaderboard.png)
+
+#### Recognize Celebrities :
+![](screenshots/4-Celebrity.png)
+
+#### User Profile :
+![](screenshots/Profile.png)
