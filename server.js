@@ -15,13 +15,21 @@ const leaderboard = require('./controllers/leaderboard');
 const auth = require('./controllers/authorization');
 
 //Database Setup
-const db = knex({
-  client: 'pg',
-  connection: {
-    connectionString: process.env.DATABASE_URL,
-    ssl: { rejectUnauthorized: false }
-  }
-});
+let db;
+if(process.env.NODE_ENV === 'prod'){
+  db = knex({
+    client: 'pg',
+    connection: {
+      connectionString: process.env.DATABASE_URL,
+      ssl: { rejectUnauthorized: false }
+    }
+  })
+} else {
+  db = knex({
+    client: 'pg',
+    connection: process.env.DATABASE_URL
+  })
+}
 
 const app = express();
 
